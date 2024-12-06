@@ -45,7 +45,7 @@ def get_numbers_ticket(min, max, quantity):
             result_list.append(random.randrange(min, max))
             i += 1
 
-            if (result_list[0] == random.randrange(min, max)):
+            if (result_list[i] == random.randrange(min, max)):
                 continue
 
         return sorted(result_list)
