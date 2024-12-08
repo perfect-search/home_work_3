@@ -30,7 +30,7 @@ def get_numbers_ticket(min_num, max_num, quantity):
                 result_list.append(random.randrange(min_num, max_num))
                 i += 1
 
-            result_list =  set(sorted(result_list))
+            result_list =  list(set(sorted(result_list)))
         
     except Exception as e:
         print(e)
@@ -38,7 +38,7 @@ def get_numbers_ticket(min_num, max_num, quantity):
     return result_list
 
 
-print(get_numbers_ticket(10, 15, 5))
+print(get_numbers_ticket(10, 20, 5))
 
 
 raw_numbers = [
