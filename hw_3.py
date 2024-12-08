@@ -26,11 +26,12 @@ def get_numbers_ticket(min_num, max_num, quantity):
     try:
         if (min_num >= 1 and max_num < 1001 and quantity < 999):
             i = 0
-            while i < quantity:
-                result_list.append(random.randrange(min_num, max_num))
+            sett = set()
+            while len(sett) < quantity:
+                sett.add(random.randrange(min_num, max_num))
                 i += 1
-
-            result_list =  list(set(sorted(result_list)))
+            
+            result_list = sorted(list(sett))
         
     except Exception as e:
         print(e)
@@ -38,7 +39,7 @@ def get_numbers_ticket(min_num, max_num, quantity):
     return result_list
 
 
-print(get_numbers_ticket(10, 20, 5))
+print(get_numbers_ticket(1, 49, 6))
 
 
 raw_numbers = [
