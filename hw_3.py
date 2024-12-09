@@ -28,18 +28,22 @@ def get_numbers_ticket(min_num, max_num, quantity):
             i = 0
             sett = set()
             while len(sett) < quantity:
-                sett.add(random.randrange(min_num, max_num))
                 i += 1
-            
+
+                if (i <= 999):
+                    sett.add(random.randrange(min_num, max_num))
+                else:
+                    return []
+
             result_list = sorted(list(sett))
-        
+
     except Exception as e:
         print(e)
 
     return result_list
 
 
-print(get_numbers_ticket(1, 49, 6))
+print(get_numbers_ticket(10, 15, 9))
 
 
 raw_numbers = [
@@ -59,7 +63,7 @@ def normalize_phone(phone_number):
     cleaned_number = re.sub(r'\D', '', phone_number)
 
     if (cleaned_number[0] != '+'):
-        if(cleaned_number[0] == '3'):
+        if (cleaned_number[0] == '3'):
             cleaned_number = f'+{cleaned_number}'
         elif (cleaned_number[0] == '0'):
             cleaned_number = f'+38{cleaned_number}'
